@@ -13,3 +13,7 @@ html,body {
 .mt-150 {
     margin-top: 150px;
 }
+
+a,a:link,a:visited,a:hover,a:active {
+    text-decoration: none;
+}
