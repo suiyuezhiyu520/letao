@@ -60,7 +60,7 @@ $(function() {
     //    })
     //})
 
-    $('form').on("success.form.bv", function (e) {
+    $("form").on("success.form.bv", function (e) {
         //阻止浏览器默认行为
         e.preventDefault();
         console.log($("form").serialize());
