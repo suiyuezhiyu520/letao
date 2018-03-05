@@ -48,7 +48,6 @@ function render (){
                     //为按钮绑定点击事件 page:当前点击的按钮值
                     page = p;
                     render();
-
                 }
             });
         }
@@ -64,4 +63,17 @@ $(".dropdown-menu").on("click","a",function(){
     console.log($(this).data("id"));
 
     $("[name='categoryId']").val($(this).data("id"));
+
+    $(".categoryname").text($(this).text());
 })
+
+
+$("#fileupload").fileupload({
+    dataType:"json",
+    //e：事件对象
+    //data：图片上传后的对象，通过e.result.picAddr可以获取上传后的图片地址
+    done:function (e, data) {
+        console.log(e.result.picAddr);
+        console.log(data);
+    }
+});
