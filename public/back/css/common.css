@@ -106,3 +106,24 @@ a,a:link,a:visited,a:hover,a:active {
     width: 45%;
     height:400px;
 }
+
+.table.table-bordered td {
+    vertical-align: middle !important;
+}
+
+.mb_20 {
+    margin-bottom: 20px;
+}
+
+#uploadfile {
+    width:100%;
+    height: 100%;
+    opacity:0;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.fileupload {
+    position: relative;
+}
