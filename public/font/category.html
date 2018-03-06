@@ -179,6 +179,10 @@
 
 
 <script type="text/template" id="temp_second">
+
+    {{if rows.length == 0 }}
+    <p class="note">该分类下没有更多的数据</p>
+    {{/if}}
         {{ each rows v i }}
         <li>
             <a href="#">

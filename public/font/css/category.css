@@ -42,3 +42,8 @@
     width: 62px;
     height: 62px;
 }
+
+.category_second .note {
+    padding: 10px;
+    font-size: 12px;
+}
