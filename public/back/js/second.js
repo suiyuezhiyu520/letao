@@ -65,6 +65,8 @@ $(".dropdown-menu").on("click","a",function(){
     $("[name='categoryId']").val($(this).data("id"));
 
     $(".categoryname").text($(this).text());
+
+    $("#form").data("bootstrapValidator").updateStatus("categoryId","VALID");
 })
 
 
@@ -73,7 +75,106 @@ $("#fileupload").fileupload({
     //e：事件对象
     //data：图片上传后的对象，通过e.result.picAddr可以获取上传后的图片地址
     done:function (e, data) {
-        console.log(e.result.picAddr);
+        console.log(data.result.picAddr);
+        console.log(e);
         console.log(data);
+        $(".img_box img").attr("src",data.result.picAddr);
+        $(".img_box input").val(data.result.picAddr);
+        $("#form").data("bootstrapValidator").updateStatus("brandLogo","VALID");
     }
 });
+
+var $form = $("#form");
+
+$("#form").bootstrapValidator({
+    feedbackIcons : {
+        valid : "glphicon glphicon-ok",
+        invalid : "glphicon glphicon-remove",
+        validating : "glphicon glphicon-refresh"
+    },
+
+    fields : {
+        categoryId : {
+            validators : {
+                notEmpty :{
+                    message : "一级分类不能为空"
+                }
+            }
+        },
+        brandName : {
+            validators : {
+                notEmpty : {
+                    message : "二级分类不能为空"
+                }
+            }
+        },
+        brandLogo : {
+            validators : {
+                notEmpty : {
+                    message : "图片不能为空"
+                }
+            }
+        }
+    },
+    excluded: [],
+})
+
+
+//var $form = $("form");
+//$form.bootstrapValidator({
+//    //小图标
+//    feedbackIcons: {
+//        valid: 'glyphicon glyphicon-ok',
+//        invalid: 'glyphicon glyphicon-remove',
+//        validating: 'glyphicon glyphicon-refresh'
+//    },
+//    //校验规则
+//    fields:{
+//        categoryId:{
+//            validators:{
+//                notEmpty:{
+//                    message:'请选择一级分类'
+//                }
+//            }
+//        },
+//        brandName:{
+//            validators:{
+//                notEmpty:{
+//                    message:'请输入品牌的名称'
+//                }
+//            }
+//        },
+//        brandLogo: {
+//            validators:{
+//                notEmpty:{
+//                    message:'请上传品牌的图片'
+//                }
+//            }
+//        }
+//    },
+//    excluded:[]
+//});
+
+$("form").on("success.form.bv",function(e){
+    e.preventDefault();
+    $.ajax({
+        url : "/category/addSecondCategory",
+        data : $("#form").serialize(),
+        type : "post",
+        success :  function(info){
+            console.log(info);
+            render();
+            $("#form").data("bootstrapValidator").resetForm(true);
+            $("[name='categoryId']").val("");
+
+            $(".categoryname").text("请选择一级分类");
+
+            $(".img_box img").attr("src","");
+            $(".img_box input").val("");
+
+            $("#addModal").modal("hide");
+        }
+    })
+})
+
+
