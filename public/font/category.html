@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="lt_header">
+        <a href="index.html" class="lt_left fl">
+            <span class="fa fa-home"></span>
+        </a>
+        <a href="index.html" class="lt_right fr">
+            <span class="fa fa-search"></span>
+        </a>
+        <h4>乐淘云购</h4>
+    </div>
+    <div class="main">
+        <div class="category_l">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="category_nav">
+                        <ul>
+                            <li class="now"><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                            <li><a href="#">运动馆</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category_r">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="category_second">
+                        <ul class="mui-clearfix">
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/brand1.png" alt="">
+                                    <p>男人馆</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lt_footer">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script type="text/template" id="temp_category">
+    {{each rows v i }}
+    <li><a data-id="{{v.id}}" href="#">{{v.categoryName}}</a></li>
+    {{/each}}
+</script>
+
+
+
+<script type="text/template" id="1temp_second">
+    {{ each rows v i }}
+    {{<!-模板中间不能多加一个等于号--->}}
+            <li>
+                <a href="#">
+                    <img src="{{v.brandLogo}}" alt="">
+                    <p>{{v.brandName}}</p>
+                </a>
+            </li>
+        {{ /each }}
+</script>
+
+
+
+<script type="text/template" id="temp_second">
+        {{ each rows v i }}
+        <li>
+            <a href="#">
+                <img src="{{v.brandLogo}}" alt="">
+                <p>{{v.brandName}}</p>
+            </a>
+        </li>
+    {{/each}}
+    </script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/category.js"></script>

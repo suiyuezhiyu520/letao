@@ -1,0 +1,44 @@
+.container {
+    position: relative;
+    /*padding-left: 90px;*/
+    margin:0 auto;
+}
+.category_l {
+    width: 90px;
+    height: 100%;
+    background-color: hotpink;
+    position: relative;
+    float: left;
+}
+.category_r {
+    /*width: 100%;*/
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+    position: relative;
+
+}
+
+.category_nav a {
+    height: 50px;
+    display: block;
+    border-right: 1px solid red ;
+    border-bottom:1px solid red;
+    line-height:50px;
+    text-align: center;
+}
+.category_nav li.now a {
+    border-right: none;
+    background-color: #fff;
+}
+
+.category_second li {
+    width:33.33%;
+    text-align: center;
+    float: left;
+}
+
+.category_second li img {
+    width: 62px;
+    height: 62px;
+}

@@ -1,0 +1,36 @@
+.lt_nav {
+    padding:10px;
+}
+
+.lt_nav li {
+    float: left;
+    width:33.33%;
+}
+.lt_product {
+    padding:10px;
+}
+
+.lt_product a {
+    text-align: center;
+    float: left;
+    width:48%;
+    display: block;
+    padding:10px;
+    border:1px solid #ccc;
+    margin-bottom: 2%;
+}
+
+.lt_product .newpirce {
+    color: red;
+}
+.lt_product .oldpirce {
+    text-decoration: line-through;
+    padding-left: 5px;
+}
+
+.lt_product a:nth-child(2n){
+    margin-left: 2%;
+}
+.lt_product a:nth-child(2n+1){
+    margin-left: 1%;
+}
