@@ -1,0 +1,23 @@
+
+.search-content {
+    /*height: 100%;*/
+    padding:10px;
+}
+.search_key {
+    position: relative;
+    border:1px dashed red;
+    border-bottom: none;
+}
+
+.search_key li {
+    height: 30px;
+    line-height:30px;
+    text-indent: 10px;
+    border-bottom: 1px dashed red;
+}
+
+.search_key li span {
+    height: 30px;
+    line-height:30px;
+    display: block;
+}

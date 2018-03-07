@@ -1,0 +1,22 @@
+.nav  {
+    background-color: #eee;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.nav li {
+    float: left;
+    width:25%;
+    text-align: center;
+}
+.nav li a {
+    text-align: center;
+    display: block;
+    color: #666;
+}
+
+.nav li a.now {
+    color: #daa520;
+}
